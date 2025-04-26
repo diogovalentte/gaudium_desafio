@@ -1,16 +1,30 @@
 # Desafio Gaudium
 
-# Objetivo
+## Objetivo
 
 Criar um data mart para venda de produtos aplicando o modelo dimensional.
 
-# Fonde de Dados
+## Fonte de Dados
 
 A fonte de dados utilizada para o desafio foi o arquivo CSV `tabelas/dados_brutos.csv`, que contém informações sobre vendas de produtos:
 
-# Esquema do Data Mart
+| Nome da Coluna  | Descrição                               | Tipo     |
+|-----------------|-----------------------------------------|----------|
+| `nome_cliente`  | Nome do cliente                         | Texto    |
+| `cidade`        | Cidade do cliente                       | Texto    |
+| `estado`        | Estado do cliente                       | Texto    |
+| `nome_produto`  | Nome do produto                         | Texto    |
+| `categoria`     | Categoria do produto                    | Texto    |
+| `fabricante`    | Fabricante do produto                   | Texto    |
+| `data`          | Data da venda                           | Data     |
+| `qtd_vendida`   | Quantidade vendida                      | Inteiro  |
+| `valor_total`   | Valor total da venda                    | Inteiro  |
+
+## Esquema do Data Mart
 
 As seguintes tabelas de dimensão e fato foram criadas. O modelo dimensional facilita a análise de dados e a geração de relatórios usando chaves primárias e estrangeiras.
+
+![dados brutos esquema](images/data_mart_schema.png)
 
 As tabelas foram salvas no diretório `tabelas/` com os seguintes nomes:
 
@@ -22,7 +36,7 @@ As tabelas foram salvas no diretório `tabelas/` com os seguintes nomes:
 - `dim_data.csv`: Tabela de dimensão com informações sobre as datas. Informações adicionais sobre a data foram extraidas para colunas próprias para facilitar queries.
 - `fato_vendas.csv`: Tabela de fato com informações sobre as vendas.
 
-# ETL
+## ETL
 
 Para fazer a extração, transformação e carga (ETL) dos dados, foi utilizado o arquivo jupyter notebook `etl.ipynb`. Ele contém o código necessário para processar os dados e gerar as tabelas de dimensão e fato.
 
